@@ -1,25 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import {AppContext, useAppContext} from "./context/AppContext";
+import Page from "./view/Page";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const appData = useAppContext();
+    return (
+        <>
+            <AppContext.Provider value={appData}>
+                <div className="App">
+
+                    <Page/>
+                    { appData.chordList.map((x, i) => {
+                        //console.log("distance strings of " + x.name, appData.functions.disStrings(appData.functions.stringArray(x.pattern)))
+                        console.log("selected Chord " + x.name, appData.functions.createFingerArray(appData.chordList, x.name));
+
+                    })}
+                    {console.log("interdistance " + appData.chordList[3].name, appData.chordList[5].name, appData.functions.interComplexity2chords(appData.chordList, appData.chordList[3].name, appData.chordList[5].name))}
+                    {console.log("globalComplexity " + appData.chordList[3].name, appData.chordList[5].name, appData.functions.globalComplexity(appData.chordList, appData.chordList[3].name, appData.chordList[5].name))}
+
+                    {console.log("Array Chords", appData.sequenceChords.data)}
+                </div>
+            </AppContext.Provider>
+        </>
+
+    );
 }
 
 export default App;

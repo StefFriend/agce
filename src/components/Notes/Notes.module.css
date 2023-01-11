@@ -1,0 +1,38 @@
+.container{
+    position: absolute;
+    left: 17px;
+    top: -7px;
+    width: 960px;
+    height: 258px;
+    overflow-x: hidden;
+}
+
+.mask{
+    position: absolute;
+    right: -189px;
+    bottom: 0;
+    width: 1184px;
+    height: 30px;
+}
+
+.mask ul {
+    position: relative;
+    float: left;
+}
+
+.mask ul li{
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-right: 50px;
+    background: #fa990f;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.75);
+}
+
+.lowE{
+    right: -189px;
+}

@@ -1,0 +1,25 @@
+.container{
+    position: absolute;
+    width: 50px;
+    left: -52px;
+    top: 0;
+    margin-left: 0;
+    background: #211f1d;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-weight: bold;
+    flex-direction: column;
+}
+
+
+.fret{
+    float: left;
+    width: 3px;
+    height: 250px;
+    background: #d7d6d6;
+    margin-left: 75px;
+    border-right: 2px solid #686868;
+
+}
