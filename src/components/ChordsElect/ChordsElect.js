@@ -11,6 +11,8 @@ const ChordsElect = (props) => {
     const handleChange = (event) => {
         appData.functions.defineSelectedChords(event.target.value, index)
         setChord(event.target.value);
+        appData.play.setSelected(null);
+        appData.functions.createStepsArray(appData.chordList, event.target.value, index)
     };
 
     return (

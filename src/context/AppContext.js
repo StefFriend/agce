@@ -11,7 +11,52 @@ export const AppContext = React.createContext({});
 export function useAppContext() {
 
     const [chordsArray, setChordsArray] = useState([null, null, null, null]);
-    const [isPlay, setPlay] = useState(false);
+    const [playAll, setPlayAll] = useState(false);
+    const [playChord, setPlayChord ] = useState(null);
+    const [step, setStep] = useState([null, null, null, null]);
+    const [stepChord, setStepChord] = useState([null, null, null])
+
+
+    /**
+     * @param chordList Elenco degli accordi
+     * @param chordName Accordo selezionato
+     * @param step Step array per Reactronica
+     * @param index indice dell'accordo selezionato dall' utente
+     */
+
+    const createStepsArray = (chordList, chordName, index) => {
+        let selectedChord = chordList.filter(x => x.name === chordName);
+
+        let notesArray = [];
+        selectedChord = selectedChord[0].pattern;
+        selectedChord.map((x,i) => {
+            if(x.note !== null && !notesArray.includes(x.note)  ) {
+                notesArray.push(x.note);
+            }
+        })
+
+        setStep(produce(step, draft => {
+            draft[index] = notesArray;
+        }))
+
+    }
+
+    const createStepChord = (chordList, chordName) => {
+        let selectedChord = chordList.filter(x => x.name === chordName);
+
+        let notesArray = [];
+        selectedChord = selectedChord[0].pattern;
+        selectedChord.map((x,i) => {
+            if(x.note !== null && !notesArray.includes(x.note)  ) {
+                notesArray.push(x.note);
+            }
+        })
+
+        setStepChord(produce(stepChord, draft => {
+            draft[0] = notesArray;
+        }))
+
+    }
 
     /**
      * Add chords to sequence
@@ -21,7 +66,8 @@ export function useAppContext() {
         console.log("Define!" , chordName, index);
         setChordsArray(produce(chordsArray, draft => {
            draft[index] = chordName;
-       }))
+        }))
+
 
     }
 
@@ -135,8 +181,6 @@ export function useAppContext() {
             }
         }
 
-        console.log("COUNT FINGERS", countFingers);
-
         if (maxFret > 3) {
             return (distanceFrets + distanceStrings + (maxFret - 3)) * countFingers *0.25; //per ogni dito in più moltiplichiamo .25
         } else {
@@ -144,11 +188,6 @@ export function useAppContext() {
         }
     }
 
-    const createNotesArray = (chordList, chordName) => {
-        let filtered = chordList.filtered(x => x.name === chordName);
-        let notesArray = [];
-
-    }
 
     const interComplexity2chords = (chordList, chord1, chord2) => { //equivale a cd in appunti
         const fingerArray1 = createFingerArray(chordList, chord1);
@@ -215,6 +254,8 @@ export function useAppContext() {
                 interComplexity2chords: interComplexity2chords,
                 globalComplexity: globalComplexity,
                 defineSelectedChords: defineSelectedChords,
+                createStepsArray: createStepsArray,
+                createStepChord: createStepChord,
             },
 
             sequenceChords: {
@@ -222,11 +263,16 @@ export function useAppContext() {
                 setData: setChordsArray,
             },
             play:{
-                value: isPlay,
-                setValue: setPlay
+                value: playAll,
+                setValue: setPlayAll,
+                selected: playChord,
+                setSelected: setPlayChord,
+                step: step,
+                stepChord: stepChord,
+
             }
 
-        }), [chordsArray, isPlay]
+        }), [chordsArray, playAll, step, stepChord]
     );
 
 }
