@@ -5,32 +5,38 @@
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "C"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "G"
       },
       {
         
         "fret": 2,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 2
+        "finger": 2,
+        "note": "C"
       },
       {
         
         "fret": -1,
-        "finger": -1
+        "finger": -1,
+        "note": null
       }
     ]
   },
@@ -40,32 +46,38 @@
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 3
+        "finger": 3,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": -1,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       }
     ]
   },
@@ -75,32 +87,38 @@
       {
         
         "fret": 3,
-        "finger": 3
+        "finger": 3,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       }
     ]
   },
@@ -110,32 +128,38 @@
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       }
     ]
   },
@@ -145,32 +169,38 @@
       {
         
         "fret": 2,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": -1,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": -1,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       }
     ]
   },
@@ -180,32 +210,38 @@
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       }
     ]
   },
@@ -215,23 +251,27 @@
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
 
       {
         
         "fret": 2,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
@@ -241,7 +281,48 @@
       {
         
         "fret": -1,
+        "finger": -1,
+        "note": "E"
+      }
+    ]
+  },
+  {
+    "name": "Am7",
+    "pattern": [
+      {
+
+        "fret": 0,
+        "finger": -1,
+        "note": "E"
+      },
+      {
+        "fret": 1,
+        "finger": 0,
+        "note": "E"
+      },
+      {
+
+        "fret": 0,
+        "finger": -1,
+        "note": "E"
+      },
+
+      {
+
+        "fret": 2,
+        "finger": 1,
+        "note": "E"
+      },
+      {
+
+        "fret": 0,
         "finger": -1
+      },
+      {
+
+        "fret": -1,
+        "finger": -1,
+        "note": "E"
       }
     ]
   },
@@ -251,32 +332,38 @@
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 0,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": -1,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       },
       {
         
         "fret": -1,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       }
     ]
   },
@@ -286,32 +373,38 @@
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 3
+        "finger": 3,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       }
     ]
   },
@@ -321,32 +414,38 @@
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 3
+        "finger": 3,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       }
     ]
   },
@@ -356,32 +455,38 @@
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 3
+        "finger": 3,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": -1,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       }
     ]
   },
@@ -391,32 +496,38 @@
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 3
+        "finger": 3,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 1,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": -1,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       }
     ]
   },
@@ -426,32 +537,38 @@
       {
         
         "fret": 2,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 4,
-        "finger": 3
+        "finger": 3,
+        "note": "E"
       },
       {
         
         "fret": 4,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       }
     ]
   },
@@ -461,32 +578,38 @@
       {
         
         "fret": 2,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 4,
-        "finger": 3
+        "finger": 3,
+        "note": "E"
       },
       {
         
         "fret": 4,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 4,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": -1,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       }
     ]
   },
@@ -496,32 +619,38 @@
       {
         
         "fret": 2,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": 3,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
         
         "fret": 4,
-        "finger": 3
+        "finger": 3,
+        "note": "E"
       },
       {
         
         "fret": 4,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
         
         "fret": 2,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
         
         "fret": -1,
-        "finger": -1
+        "finger": -1,
+        "note": "E"
       }
     ]
   },
@@ -531,32 +660,38 @@
       {
 
         "fret": 4,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
 
         "fret": 4,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       },
       {
 
         "fret": 5,
-        "finger": 1
+        "finger": 1,
+        "note": "E"
       },
       {
 
         "fret": 6,
-        "finger": 3
+        "finger": 3,
+        "note": "E"
       },
       {
 
         "fret": 6,
-        "finger": 2
+        "finger": 2,
+        "note": "E"
       },
       {
 
         "fret": 4,
-        "finger": 0
+        "finger": 0,
+        "note": "E"
       }
     ]
   }

@@ -1,15 +1,17 @@
 import React, {useMemo, useState} from "react";
 
-/* FROM JSON*/
-import chordList from '../data/json/chords.json';
 import produce from "immer";
 
+/* FROM JSON*/
+import chordList from '../data/json/chords.json';
+import noteDict from '../data/json/noteDict.json'; //TODO: DA CAMBIARE GLI ELEMENTI NEL FILE
 
 export const AppContext = React.createContext({});
 
 export function useAppContext() {
 
     const [chordsArray, setChordsArray] = useState([null, null, null, null]);
+    const [isPlay, setPlay] = useState(false);
 
     /**
      * Add chords to sequence
@@ -83,30 +85,6 @@ export function useAppContext() {
     }
 
     /**
-     * Funzione per calcolare la complessità intrinseca dell'accordo
-     * distanza tasti + distanza corda
-     * N.B. tiene conto anche della pressione del dito quando fa un barrè su un tasto > 3
-     * @returns {number}
-     * @param chordList
-     * @param chordName
-     */
-    const intraComplexity = (chordList, chordName) => {
-        let pattern = chordList.filter(x => x.name === chordName);
-        pattern = pattern[0].pattern;
-        console.log("PATTERN", pattern)
-        let frets = fretArray(pattern);
-        let maxFret = Math.max(...frets);
-        let strings = stringArray(pattern);
-        let distanceFrets = disFrets(frets);
-        let distanceStrings = disStrings(strings);
-        if (maxFret > 3) {
-        return distanceFrets + distanceStrings + (maxFret - 3);
-        } else {
-            return distanceFrets + distanceStrings;
-        }
-    }
-
-    /**
      * Funzione per creare una riga della matrice inter accordo, dato il json e il nome dell'accordo selezionato dall'utente
      * @returns {*[]} - Gli elementi dell'array sono le corde su cui sono poggiate le varie dita
      * @param chordList
@@ -131,19 +109,65 @@ export function useAppContext() {
         return fingerArray;
     }
 
-    const interComplexity2chords = (chordList, chord1, chord2) => {
-        const fingerArray1 = createFingerArray(chordList, chord1)
-        const fingerArray2 = createFingerArray(chordList, chord2)
+
+    /**
+     * Funzione per calcolare la complessità intrinseca dell'accordo
+     * distanza tasti + distanza corda
+     * N.B. tiene conto anche della pressione del dito quando fa un barrè su un tasto > 3
+     * @returns {number}
+     * @param chordList
+     * @param chordName
+     */
+    const intraComplexity = (chordList, chordName) => {
+        let pattern = chordList.filter(x => x.name === chordName);
+        pattern = pattern[0].pattern;
+        console.log("PATTERN", pattern)
+        let frets = fretArray(pattern);
+        let maxFret = Math.max(...frets);
+        let strings = stringArray(pattern);
+        let distanceFrets = disFrets(frets);
+        let distanceStrings = disStrings(strings);
+        let fingerArray = createFingerArray(chordList, chordName);
+        let countFingers = 0;
+        for (let i = 0; i < 4; i++){
+            if(fingerArray[i] >= 0){
+                countFingers++;
+            }
+        }
+
+        console.log("COUNT FINGERS", countFingers);
+
+        if (maxFret > 3) {
+            return (distanceFrets + distanceStrings + (maxFret - 3)) * countFingers *0.25; //per ogni dito in più moltiplichiamo .25
+        } else {
+            return (distanceFrets + distanceStrings) * countFingers * 0.25;
+        }
+    }
+
+    const createNotesArray = (chordList, chordName) => {
+        let filtered = chordList.filtered(x => x.name === chordName);
+        let notesArray = [];
+
+    }
+
+    const interComplexity2chords = (chordList, chord1, chord2) => { //equivale a cd in appunti
+        const fingerArray1 = createFingerArray(chordList, chord1);
+        const fingerArray2 = createFingerArray(chordList, chord2);
+
         let interDistance = 0;
+
         for (let i=0; i<4; i++) {
             if(fingerArray1[i] < 0 || fingerArray2[i] < 0){
                 if (fingerArray2[i] < 0 && fingerArray1[i] < 0) {
                     interDistance = interDistance + Math.abs(fingerArray2[i] - fingerArray1[i])
-                } else if (fingerArray1[i] < 0){
-                    interDistance = interDistance + Math.abs(fingerArray2[i])
-                } else {
-                    interDistance = interDistance + Math.abs(fingerArray1[i])
-                }
+                } else if (fingerArray1[i] < 0){ // se aggiungo 1 dito aggiungo 1
+                    //interDistance = interDistance + Math.abs(fingerArray2[i])
+                    interDistance = interDistance + 1
+                } /* se tolgo un dito non aggiungo nulla
+                else {
+                    //interDistance = interDistance + Math.abs(fingerArray1[i])
+                    interDistance = interDistance + 0
+                }*/
             } else {
                 interDistance = interDistance + Math.abs(fingerArray2[i] - fingerArray1[i])
             }
@@ -152,6 +176,7 @@ export function useAppContext() {
         return interDistance;
     }
 
+    //TODO - DA CAMBIARE PERCHÉ SBAGLIATA -- COMPLESSITÀ TOTALE TRA TUTTI E 4
     /**
      * Complessità
      * @param chordList
@@ -159,16 +184,21 @@ export function useAppContext() {
      * @param chord2
      * @returns {number}
      */
-    const globalComplexity = (chordList, chord1, chord2) => {
+    const globalComplexity = (chordList, chord1, chord2) => { //equivale a inter in appunti
         let intra1 = intraComplexity(chordList, chord1);
         let intra2 = intraComplexity(chordList, chord2);
         let inter = interComplexity2chords (chordList, chord1, chord2)
 
         console.log("Intra of ", chord1, "is", intra1);
         console.log("Intra of ", chord2, "is", intra2);
-        console.log("Inter of ", chord1, chord2, "is", inter);
+        console.log("cd of ", chord1, chord2, "is", inter);
+        let difficulty = intra2 - intra1 + inter;
 
-        return intra1 + intra2 + inter;
+        if(difficulty < 0) {
+            difficulty = 0
+        }
+
+        return difficulty
     }
 
 
@@ -187,12 +217,16 @@ export function useAppContext() {
                 defineSelectedChords: defineSelectedChords,
             },
 
-            sequenceChords:{
+            sequenceChords: {
                 data: chordsArray,
                 setData: setChordsArray,
+            },
+            play:{
+                value: isPlay,
+                setValue: setPlay
             }
 
-        }), [chordsArray]
+        }), [chordsArray, isPlay]
     );
 
 }

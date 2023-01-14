@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import {ChordsElect, Fretboard} from "../components";
 import styles from './Page.module.css'
 import {AppContext} from "../context/AppContext";
+import PlayChords from "../components/PlayChords/PlayChords";
 
 
 const Page = () => {
@@ -25,9 +26,9 @@ const Page = () => {
                         </div>
                             {appData.sequenceChords.data[i+1] !== null && appData.sequenceChords.data[i+1] !== undefined ?
                                 <div className={styles.text}>
-                                Difficoltà inter accordo: {appData.functions.interComplexity2chords(appData.chordList, x, appData.sequenceChords.data[i+1])}
+                                CD: {appData.functions.interComplexity2chords(appData.chordList, x, appData.sequenceChords.data[i+1])}
                                     <br/>
-                                    Global complexity: {appData.functions.globalComplexity(appData.chordList, x, appData.sequenceChords.data[i+1])}
+                                    InterComplexity: {appData.functions.globalComplexity(appData.chordList, x, appData.sequenceChords.data[i+1])}
                                 </div> : <div className={styles.text}/>
                             }
 
@@ -43,7 +44,9 @@ const Page = () => {
 
             <Fretboard/>
 
+            <button onClick={() => {appData.play.setValue(!appData.play.value)}}>Play</button>
 
+            <PlayChords/>
         </div>
     );
 };
