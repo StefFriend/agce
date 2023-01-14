@@ -3,6 +3,7 @@ import {ChordsElect, Fretboard} from "../components";
 import styles from './Page.module.css'
 import {AppContext} from "../context/AppContext";
 import PlayChords from "../components/PlayChords/PlayChords";
+import app from "../App";
 
 
 const Page = () => {
@@ -21,14 +22,14 @@ const Page = () => {
                 {appData.sequenceChords.data.map((x, i) => {
                     if (x !== null) {
                         return <div className={styles.column}>
-                        <div className={styles.text}>
-                            Difficoltà intra accordo: {appData.functions.intraComplexity(appData.chordList, x)}
-                        </div>
-                            {appData.sequenceChords.data[i+1] !== null && appData.sequenceChords.data[i+1] !== undefined ?
+                            <div className={styles.text}>
+                                Difficoltà intra accordo: {appData.functions.intraComplexity(appData.chordList, x)}
+                            </div>
+                            {appData.sequenceChords.data[i + 1] !== null && appData.sequenceChords.data[i + 1] !== undefined ?
                                 <div className={styles.text}>
-                                CD: {appData.functions.interComplexity2chords(appData.chordList, x, appData.sequenceChords.data[i+1])}
+                                    CD: {appData.functions.interComplexity2chords(appData.chordList, x, appData.sequenceChords.data[i + 1])}
                                     <br/>
-                                    InterComplexity: {appData.functions.globalComplexity(appData.chordList, x, appData.sequenceChords.data[i+1])}
+                                    InterComplexity: {appData.functions.globalComplexity(appData.chordList, x, appData.sequenceChords.data[i + 1])}
                                 </div> : <div className={styles.text}/>
                             }
 
@@ -44,9 +45,15 @@ const Page = () => {
 
             <Fretboard/>
 
-            <button onClick={() => {appData.play.setValue(!appData.play.value)}}>Play</button>
+            <button onClick={() => {
+                appData.play.setSelected(null);
+                appData.play.setValue(!appData.play.value);
+            }}>{appData.play.value ? 'Stop' : 'Play'}</button>
 
-            <PlayChords/>
+            {appData.play.selected === null ? <PlayChords play={appData.play.value} steps={appData.play.step}/> :
+                <PlayChords play={appData.play.value} steps={appData.play.stepChord}/>}
+
+
         </div>
     );
 };

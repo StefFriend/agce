@@ -63,7 +63,7 @@ export function useAppContext() {
      */
 
     const defineSelectedChords = (chordName, index) => {
-        console.log("Define!" , chordName, index);
+
         setChordsArray(produce(chordsArray, draft => {
            draft[index] = chordName;
         }))
@@ -167,7 +167,7 @@ export function useAppContext() {
     const intraComplexity = (chordList, chordName) => {
         let pattern = chordList.filter(x => x.name === chordName);
         pattern = pattern[0].pattern;
-        console.log("PATTERN", pattern)
+        //console.log("PATTERN", pattern)
         let frets = fretArray(pattern);
         let maxFret = Math.max(...frets);
         let strings = stringArray(pattern);
@@ -228,9 +228,9 @@ export function useAppContext() {
         let intra2 = intraComplexity(chordList, chord2);
         let inter = interComplexity2chords (chordList, chord1, chord2)
 
-        console.log("Intra of ", chord1, "is", intra1);
-        console.log("Intra of ", chord2, "is", intra2);
-        console.log("cd of ", chord1, chord2, "is", inter);
+       // console.log("Intra of ", chord1, "is", intra1);
+       // console.log("Intra of ", chord2, "is", intra2);
+       // console.log("cd of ", chord1, chord2, "is", inter);
         let difficulty = intra2 - intra1 + inter;
 
         if(difficulty < 0) {

@@ -1,7 +1,9 @@
 import React, {useContext, useState} from 'react';
 import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
-
+import styles from './ChordsElect.module.css'
 import {AppContext} from "../../context/AppContext";
+import app from "../../App";
+import {Instrument, Song, Track} from "reactronica";
 
 const ChordsElect = (props) => {
     const appData = useContext(AppContext)
@@ -16,22 +18,44 @@ const ChordsElect = (props) => {
     };
 
     return (
-        <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Chord</InputLabel>
-            <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={chord}
-                label="Chord"
-                onChange={handleChange}
-            >
-                {chords.map((x) => {
-                    return <MenuItem value={x.name}>{x.name}</MenuItem>
-                })}
+        <>
+            <div className={styles.container}>
 
 
-            </Select>
-        </FormControl>
+                <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Chord</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={chord}
+                        label="Chord"
+                        onChange={handleChange}
+                    >
+                        {chords.map((x) => {
+                            return <MenuItem value={x.name}>{x.name}</MenuItem>
+                        })}
+
+
+                    </Select>
+                </FormControl>
+
+                <button onClick={() => {
+
+                    if (appData.play.selected !== chord) {
+                        appData.play.setValue(false);
+                        appData.functions.createStepChord(appData.chordList, chord)
+                        appData.play.setSelected(index);
+                    }
+
+                    appData.play.setValue(!appData.play.value);
+
+
+                }}>Play
+                </button>
+            </div>
+
+
+        </>
     );
 };
 export default ChordsElect;
