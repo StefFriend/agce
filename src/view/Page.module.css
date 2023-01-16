@@ -6,8 +6,8 @@
 .row{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    flex-grow: 1;
+    width: 20%!important;
+    /* overflow: auto; */
 }
 
 .text{

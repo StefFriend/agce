@@ -16,6 +16,8 @@ export function useAppContext() {
     const [step, setStep] = useState([null, null, null, null]);
     const [stepChord, setStepChord] = useState([null, null, null])
 
+    // questo array viene passato a guitar per definire quali accordi deve mostrare
+    const [fretsArray, setFretsArray] = useState([[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0]])
 
     /**
      * @param chordList Elenco degli accordi
@@ -101,11 +103,19 @@ export function useAppContext() {
         }
         return string;
     }
-    /*
-    const MaxMin = (array) => {
-        const max = Math.max(...array);
-        const min = Math.min(...array);
-    }*/
+
+    const fretsArrayForTab = (chordList, chordName, index) => {
+        let pattern = chordList.filter(x => x.name === chordName);
+        pattern = pattern[0].pattern;
+        //console.log("PATTERN", pattern)
+        let frets = fretArray(pattern);
+        console.log("FRETSSSSSSS", frets)
+        setFretsArray(produce(fretsArray, draft => {
+            draft[index] = frets;
+        }))
+    }
+
+    //FUNZIONE PER INVERTIRE L'ARRAY DEI FRET
 
     /**
      * Funzione per calcolare la distanza tra il tasto minore e quello maggiore
@@ -245,17 +255,18 @@ export function useAppContext() {
         () => ({
             chordList,
             functions: {
-                fretArray: fretArray,
-                stringArray: stringArray,
-                disStrings: disStrings,
-                disFrets: disFrets,
-                intraComplexity: intraComplexity,
-                createFingerArray: createFingerArray,
-                interComplexity2chords: interComplexity2chords,
-                globalComplexity: globalComplexity,
+                fretArray: fretArray, // define fret array of single chord
+                stringArray: stringArray, // define string array of single chord
+                disStrings: disStrings, // calculate distance from max string and min string
+                disFrets: disFrets, // calculate distance from max fret and min fret
+                intraComplexity: intraComplexity, // calculate intra complexity
+                createFingerArray: createFingerArray, // define array of used finger
+                interComplexity2chords: interComplexity2chords, // calculate inter complexity of 2 chords
+                globalComplexity: globalComplexity, // calculate global complexity from chord 1 to chord 2
                 defineSelectedChords: defineSelectedChords,
                 createStepsArray: createStepsArray,
                 createStepChord: createStepChord,
+                fretsArrayForTab: fretsArrayForTab,
             },
 
             sequenceChords: {
@@ -270,10 +281,9 @@ export function useAppContext() {
                 setSelected: setPlayChord,
                 step: step,
                 stepChord: stepChord,
+            },
 
-            }
-
-        }), [chordsArray, playAll, step, stepChord]
+        }), [chordsArray, playAll, step, stepChord, fretsArray]
     );
 
 }
