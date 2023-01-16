@@ -43,7 +43,7 @@ const Page = () => {
 
             </div>
 
-            <Fretboard/>
+            {/*<Fretboard/>*/}
 
             <button onClick={() => {
                 appData.play.setSelected(null);

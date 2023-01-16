@@ -4,6 +4,7 @@ import styles from './ChordsElect.module.css'
 import {AppContext} from "../../context/AppContext";
 import app from "../../App";
 import {Instrument, Song, Track} from "reactronica";
+import {Fretboard, Tablature} from "../index";
 
 const ChordsElect = (props) => {
     const appData = useContext(AppContext)
@@ -39,7 +40,19 @@ const ChordsElect = (props) => {
                     </Select>
                 </FormControl>
 
-                <button onClick={() => {
+
+                <Guitar className={styles.guitar} strings={appData.sequenceChords.fretsArray[index]} //fretarray
+                        center renderFinger={getRenderFingerSpn(standard)}
+                        playOnHover id={index}
+                        onPlay={play}/>
+
+                <Tablature index={index}/>
+                {/*<GuitarChord
+                    chordName='C major' appData.sequenceChords.data[index]
+                    frets={['x', 3, 2, 0, 1, 0]}
+                />*/}
+
+                {/*<button onClick={() => {
 
                     if (appData.play.selected !== chord) {
                         appData.play.setValue(false);
@@ -51,7 +64,7 @@ const ChordsElect = (props) => {
 
 
                 }}>Play
-                </button>
+                </button>*/}
             </div>
 
 

@@ -259,8 +259,9 @@ export function useAppContext() {
             },
 
             sequenceChords: {
-                data: chordsArray,
+                data: chordsArray, //chord name
                 setData: setChordsArray,
+                fretsArray: fretsArray //chord array (frets)
             },
             play:{
                 value: playAll,
