@@ -32,7 +32,7 @@ const ChordsElect = (props) => {
             <div className={styles.container}>
 
 
-                <FormControl sx={{m: 1, maxWidth: 450}}>
+                <FormControl variant="filled" sx={{m: 1, maxWidth: 450}}>
                     <InputLabel id="demo-simple-select-label">Select a chord</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
@@ -40,6 +40,7 @@ const ChordsElect = (props) => {
                         value={chord}
                         label="Chord"
                         onChange={handleChange}
+                        style={{backgroundColor: 'white'}}
                     >
                         {chords.map((x) => {
                             return <MenuItem value={x.name}>{x.name}</MenuItem>
@@ -47,6 +48,7 @@ const ChordsElect = (props) => {
 
 
                     </Select>
+
 
                   <Guitar className={styles.guitar} strings={appData.sequenceChords.fretsArray[index]} //fretarray
                           center renderFinger={getRenderFingerSpn(standard)}

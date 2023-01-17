@@ -28,7 +28,7 @@ const Page = () => {
                   </div>
                   {appData.sequenceChords.data[i + 1] !== null && appData.sequenceChords.data[i + 1] !== undefined ?
                     <div className={styles.text}>
-                      CD: {appData.functions.interComplexity2chords(appData.chordList, x, appData.sequenceChords.data[i + 1])}
+                     {/* CD: {appData.functions.interComplexity2chords(appData.chordList, x, appData.sequenceChords.data[i + 1])}*/}
                       <br/>
                       InterComplexity: {appData.functions.globalComplexity(appData.chordList, x, appData.sequenceChords.data[i + 1])}
 
