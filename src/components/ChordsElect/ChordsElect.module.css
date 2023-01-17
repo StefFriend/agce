@@ -1,10 +1,57 @@
 .container{
     display: flex;
     flex-direction: column;
-    margin: 0!important;
-    width: 20!important;
+    align-content: flex-start;
+    alignment: center;
+    max-width: fit-content;
+    /*margin: 100!important;
+    width: 100!important;*/
 }
 
 .guitar{
-    max-width: 20% !important;
+    display: flex;
+    flex-direction: column;
+    /*max-width: 100% !important;*/
+    font-size: 0.5em;
+}
+
+.chart{
+    display: flex;
+    align-items: center;
+    margin-left: 155px;
+
+}
+
+.button39 {
+    background-color: #FFFFFF;
+    border: 1px solid rgb(209,213,219);
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .75rem 1rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button39:hover {
+    background-color: rgb(249,250,251);
+}
+
+.button39:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.button39:focus-visible {
+    box-shadow: none;
 }

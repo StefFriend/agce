@@ -115,7 +115,17 @@ export function useAppContext() {
         }))
     }
 
-    //FUNZIONE PER INVERTIRE L'ARRAY DEI FRET
+    //FUNZIONE PER INVERTIRE L'ARRAY DEI FRET E SOSTITUIRE -1 CON X
+    const inverseFretArray = (FretsArray) =>{
+      let inverseArray = []
+      inverseArray = FretsArray.slice().reverse()
+      let rm = inverseArray.indexOf(-1);
+      if (rm !== -1){
+        inverseArray[rm] = 'x'
+      }
+
+      return inverseArray;
+    }
 
     /**
      * Funzione per calcolare la distanza tra il tasto minore e quello maggiore
@@ -250,6 +260,26 @@ export function useAppContext() {
         return difficulty
     }
 
+    const globalD = (chordList, chord1, chord2, chord3, chord4) => { //equivale a inter in appunti
+      let inter1 = interComplexity2chords (chordList, chord1, chord2)
+      if (chord3 != null) {
+        var inter2 = interComplexity2chords(chordList, chord2, chord3)
+      }
+      if (chord4 != null) {
+        var inter3 = interComplexity2chords(chordList, chord3, chord4)
+      }
+      // console.log("Intra of ", chord1, "is", intra1);
+      // console.log("Intra of ", chord2, "is", intra2);
+      // console.log("cd of ", chord1, chord2, "is", inter);
+      let globalDif = (inter1 + inter2 + inter3)/3;
+
+      if(globalDif < 0) {
+        globalDif = 0
+      }
+
+      return globalDif
+    }
+
 
     return useMemo(
         () => ({
@@ -267,6 +297,8 @@ export function useAppContext() {
                 createStepsArray: createStepsArray,
                 createStepChord: createStepChord,
                 fretsArrayForTab: fretsArrayForTab,
+                inverseFretArray: inverseFretArray,
+                globalD: globalD,
             },
 
             sequenceChords: {

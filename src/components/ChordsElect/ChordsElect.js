@@ -4,7 +4,7 @@ import styles from './ChordsElect.module.css'
 import {AppContext} from "../../context/AppContext";
 import Guitar, {getRenderFingerSpn} from "react-guitar";
 import {standard} from 'react-guitar-tunings'
-import useSound from 'react-guitar-sound'
+import useSound  from 'react-guitar-sound'
 import app from "../../App";
 import {Instrument, Song, Track} from "reactronica";
 import {Fretboard, Tablature} from "../index";
@@ -15,7 +15,8 @@ const ChordsElect = (props) => {
     const appData = useContext(AppContext)
     const {chords, index} = props;
     const [chord, setChord] = useState('');
-    const {play} = useSound({fretting: appData.sequenceChords.fretsArray[index], tuning: standard});
+    //const acousticGuitar = withSoundFont('acoustic_guitar_steel');
+    const {play, strum} = useSound({fretting: appData.sequenceChords.fretsArray[index], tuning: standard,});
 
     const handleChange = (event) => {
         appData.functions.defineSelectedChords(event.target.value, index);
@@ -30,7 +31,7 @@ const ChordsElect = (props) => {
             <div className={styles.container}>
 
 
-                <FormControl sx={{m: 1, maxWidth: 200}}>
+                <FormControl sx={{m: 1, maxWidth: 450}}>
                     <InputLabel id="demo-simple-select-label">Select a chord</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
@@ -45,19 +46,28 @@ const ChordsElect = (props) => {
 
 
                     </Select>
+
+                  <Guitar className={styles.guitar} strings={appData.sequenceChords.fretsArray[index]} //fretarray
+                          center renderFinger={getRenderFingerSpn(standard)}
+                          onPlay={play}
+                          frets={{ from: 0, amount: 12,}}
+                  />
+                    <button class={styles.button39} role="button" onClick={() => strum()} title="Strum">
+                      Strum
+                    </button>
+
+                  <Tablature index={index}/>
+                  <div className={styles.chart}>
+                  <GuitarChord
+                    chordName= {false}
+                    frets={appData.functions.inverseFretArray(appData.sequenceChords.fretsArray[index])}
+                    music={false}
+                  />
+                  </div>
                 </FormControl>
 
 
-                <Guitar className={styles.guitar} strings={appData.sequenceChords.fretsArray[index]} //fretarray
-                        center renderFinger={getRenderFingerSpn(standard)}
-                        playOnHover id={index}
-                        onPlay={play}/>
 
-                <Tablature index={index}/>
-                <GuitarChord
-                    chordName= {appData.sequenceChords.data[index]}
-                    frets={appData.sequenceChords.fretsArray[index]}
-                />
 
                 {/*<button onClick={() => {
 

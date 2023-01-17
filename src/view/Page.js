@@ -12,6 +12,7 @@ const Page = () => {
     return (
         <div className={styles.container}>
             <h1>AGCE - A Guitar Chords Evaluator</h1>
+
             <div className={styles.row}>
                 <ChordsElect chords={appData.chordList} index={0}/>
                 <ChordsElect chords={appData.chordList} index={1}/>
@@ -30,6 +31,8 @@ const Page = () => {
                                     CD: {appData.functions.interComplexity2chords(appData.chordList, x, appData.sequenceChords.data[i + 1])}
                                     <br/>
                                     InterComplexity: {appData.functions.globalComplexity(appData.chordList, x, appData.sequenceChords.data[i + 1])}
+                                  <br/>
+                                  Global: {appData.functions.globalD(appData.chordList, appData.sequenceChords.data[i], appData.sequenceChords.data[i + 1], appData.sequenceChords.data[i + 2], appData.sequenceChords.data[i + 3])}
                                 </div> : <div className={styles.text}/>
                             }
 
@@ -45,13 +48,13 @@ const Page = () => {
 
             {/*<Fretboard/>*/}
 
-            <button onClick={() => {
+            {/*<button onClick={() => {
                 appData.play.setSelected(null);
                 appData.play.setValue(!appData.play.value);
             }}>{appData.play.value ? 'Stop' : 'Play'}</button>
 
             {appData.play.selected === null ? <PlayChords play={appData.play.value} steps={appData.play.step}/> :
-                <PlayChords play={appData.play.value} steps={appData.play.stepChord}/>}
+                <PlayChords play={appData.play.value} steps={appData.play.stepChord}/>}*/}
 
 
         </div>
