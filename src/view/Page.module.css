@@ -15,6 +15,13 @@
 .text{
 }
 
+.fullText{
+    margin: 5% 0;
+    width:100%;
+    text-align: center;
+
+}
+
 .column{
     width: 25% !important;
     display: flex;

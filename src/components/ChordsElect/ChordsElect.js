@@ -7,10 +7,9 @@ import {standard} from 'react-guitar-tunings'
 import useSound, { withSoundFont } from 'react-guitar-sound'
 import {Fretboard, Tablature} from "../index";
 import GuitarChord from 'react-guitar-chords';
-/*import { Vex, Stave, StaveNote, Formatter } from "vexflow";
-import {VexTab, Artist } from 'vextab';*/
 //disinstallare vexflow e vextab
 const acousticGuitar = withSoundFont('acoustic_guitar_steel');
+
 
 
 const ChordsElect = (props) => {
@@ -19,26 +18,6 @@ const ChordsElect = (props) => {
     const [chord, setChord] = useState('');
     //React-Guitar
     const {play, strum} = useSound({instrument: acousticGuitar, fretting: appData.sequenceChords.fretsArray[index], tuning: standard,});
-    /*const VF = vextab.Vex.Flow
-
-    const renderer = new VF.Renderer($('#boo')[0],
-      VF.Renderer.Backends.SVG);
-
-  // Initialize VexTab artist and parser.
-    const artist = new vextab.Artist(10, 10, 150, { scale: 0.8 });
-    const tab = new vextab.VexTab(artist);
-    const data = `
-
-    tabstave notation=true
-    notes (0/1.1/2.0/3.2/4.3/5) |
-  
-    `
-    try {
-      tab.parse(data);
-      artist.render(renderer);
-    } catch (e) {
-      console.error(e);
-    }*/
 
     const handleChange = (event) => {
         appData.functions.defineSelectedChords(event.target.value, index);
