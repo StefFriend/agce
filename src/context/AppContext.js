@@ -109,7 +109,7 @@ export function useAppContext() {
         pattern = pattern[0].pattern;
         //console.log("PATTERN", pattern)
         let frets = fretArray(pattern);
-        console.log("FRETSSSSSSS", frets)
+        //console.log("FRETSSSSSSS", frets)
         setFretsArray(produce(fretsArray, draft => {
             draft[index] = frets;
         }))
