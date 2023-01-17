@@ -4,7 +4,7 @@ import styles from './ChordsElect.module.css'
 import {AppContext} from "../../context/AppContext";
 import Guitar, {getRenderFingerSpn} from "react-guitar";
 import {standard} from 'react-guitar-tunings'
-import useSound  from 'react-guitar-sound'
+import useSound, { withSoundFont } from 'react-guitar-sound'
 import app from "../../App";
 import {Instrument, Song, Track} from "reactronica";
 import {Fretboard, Tablature} from "../index";
@@ -12,14 +12,15 @@ import GuitarChord from 'react-guitar-chords';
 /*import { Vex, Stave, StaveNote, Formatter } from "vexflow";
 import {VexTab, Artist } from 'vextab';*/
 //disinstallare vexflow e vextab
+const acousticGuitar = withSoundFont('acoustic_guitar_steel');
+
 
 const ChordsElect = (props) => {
     const appData = useContext(AppContext)
     const {chords, index} = props;
     const [chord, setChord] = useState('');
     //React-Guitar
-    //const acousticGuitar = withSoundFont('acoustic_guitar_steel');
-    const {play, strum} = useSound({fretting: appData.sequenceChords.fretsArray[index], tuning: standard,});
+    const {play, strum} = useSound({instrument: acousticGuitar, fretting: appData.sequenceChords.fretsArray[index], tuning: standard,});
     /*const VF = vextab.Vex.Flow
 
     const renderer = new VF.Renderer($('#boo')[0],

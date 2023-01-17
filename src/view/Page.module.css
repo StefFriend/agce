@@ -16,7 +16,7 @@
 }
 
 .column{
-    /*width: 25% !important;*/
+    width: 25% !important;
     display: flex;
     flex-direction: column;
     alignment: center;

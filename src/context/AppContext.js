@@ -119,9 +119,10 @@ export function useAppContext() {
     const inverseFretArray = (FretsArray) =>{
       let inverseArray = []
       inverseArray = FretsArray.slice().reverse()
-      let rm = inverseArray.indexOf(-1);
-      if (rm !== -1){
-        inverseArray[rm] = 'x'
+      for (let i=0;i<inverseArray.length;i++){
+        if (inverseArray[i] === -1){
+          inverseArray[i] = 'x'
+        }
       }
 
       return inverseArray;
