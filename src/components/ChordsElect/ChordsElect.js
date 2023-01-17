@@ -8,6 +8,8 @@ import useSound from 'react-guitar-sound'
 import app from "../../App";
 import {Instrument, Song, Track} from "reactronica";
 import {Fretboard, Tablature} from "../index";
+import GuitarChord from 'react-guitar-chords';
+
 
 const ChordsElect = (props) => {
     const appData = useContext(AppContext)
@@ -52,10 +54,10 @@ const ChordsElect = (props) => {
                         onPlay={play}/>
 
                 <Tablature index={index}/>
-                {/*<GuitarChord
-                    chordName='C major' appData.sequenceChords.data[index]
-                    frets={['x', 3, 2, 0, 1, 0]}
-                />*/}
+                <GuitarChord
+                    chordName= {appData.sequenceChords.data[index]}
+                    frets={appData.sequenceChords.fretsArray[index]}
+                />
 
                 {/*<button onClick={() => {
 

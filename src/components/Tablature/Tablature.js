@@ -7,7 +7,10 @@ const {index} = props
     return (
         <div>
             {appData.sequenceChords.fretsArray[index].map((x, i) => {
-                return <div>---{x}---</div>
+                if (x === -1){
+                    x = "x"
+                }
+                return <div>----------{x}----------</div>
             })}
         </div>
     );
