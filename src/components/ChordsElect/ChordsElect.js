@@ -5,8 +5,6 @@ import {AppContext} from "../../context/AppContext";
 import Guitar, {getRenderFingerSpn} from "react-guitar";
 import {standard} from 'react-guitar-tunings'
 import useSound, { withSoundFont } from 'react-guitar-sound'
-import app from "../../App";
-import {Instrument, Song, Track} from "reactronica";
 import {Fretboard, Tablature} from "../index";
 import GuitarChord from 'react-guitar-chords';
 /*import { Vex, Stave, StaveNote, Formatter } from "vexflow";

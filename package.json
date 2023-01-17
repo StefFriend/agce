@@ -17,7 +17,6 @@
     "react-guitar-sound": "^1.1.2",
     "react-guitar-tunings": "^1.1.2",
     "react-scripts": "5.0.1",
-    "reactronica": "^0.8.1-canary.0",
     "tone": "^14.7.77",
     "vexflow": "^4.1.0",
     "vextab": "^3.0.6",

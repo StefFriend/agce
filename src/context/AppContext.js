@@ -222,14 +222,14 @@ export function useAppContext() {
                     interDistance = Math.round((interDistance + Math.abs(fingerArray2[i] - fingerArray1[i]))*1000)/1000;
                 } else if (fingerArray1[i] < 0){ // se aggiungo 1 dito aggiungo 1
                     //interDistance = interDistance + Math.abs(fingerArray2[i])
-                    interDistance = (Math.round((interDistance + 1)*1000))/1000;
+                    interDistance = Math.round((interDistance + 1)*1000)/1000;
                 } /* se tolgo un dito non aggiungo nulla
                 else {
                     //interDistance = interDistance + Math.abs(fingerArray1[i])
                     interDistance = interDistance + 0
                 }*/
             } else {
-                interDistance = (Math.round((interDistance + Math.abs(fingerArray2[i] - fingerArray1[i]))*1000)/1000);
+                interDistance = Math.round((interDistance + Math.abs(fingerArray2[i] - fingerArray1[i]))*1000)/1000;
             }
 
         }

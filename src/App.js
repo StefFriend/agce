@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {AppContext, useAppContext} from "./context/AppContext";
 import Page from "./view/Page";

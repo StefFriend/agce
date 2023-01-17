@@ -1,9 +1,7 @@
-import React, {useContext, useEffect} from 'react';
-import {ChordsElect, Fretboard} from "../components";
+import React, {useContext} from 'react';
+import {ChordsElect} from "../components";
 import styles from './Page.module.css'
 import {AppContext} from "../context/AppContext";
-import PlayChords from "../components/PlayChords/PlayChords";
-import app from "../App";
 
 
 const Page = () => {
