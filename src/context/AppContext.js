@@ -115,7 +115,13 @@ export function useAppContext() {
         }))
     }
 
-    //FUNZIONE PER INVERTIRE L'ARRAY DEI FRET E SOSTITUIRE -1 CON X
+  /**
+   * Function to invert array order
+   * @param FretsArray - is the array in descending form
+   * i - is the fret/string index (from 0 to 5)
+   * @returns inverseArray
+   *
+   */
     const inverseFretArray = (FretsArray) =>{
       let inverseArray = []
       inverseArray = FretsArray.slice().reverse()
