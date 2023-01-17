@@ -27,6 +27,7 @@ function App() {
                     */}
                     {console.log("STEP", appData.play.step)}
                     {console.log("STEP SINGLE CHORD", appData.play.stepChord)}
+
                 </div>
             </AppContext.Provider>
         </>

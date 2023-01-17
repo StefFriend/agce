@@ -19,6 +19,8 @@
     "react-scripts": "5.0.1",
     "reactronica": "^0.8.1-canary.0",
     "tone": "^14.7.77",
+    "vexflow": "^4.1.0",
+    "vextab": "^3.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -202,9 +202,9 @@ export function useAppContext() {
         }
 
         if (maxFret > 3) {
-            return (distanceFrets + distanceStrings + (maxFret - 3)) * countFingers *0.25; //per ogni dito in più moltiplichiamo .25
+            return Math.round(Math.sqrt((distanceFrets + distanceStrings + (maxFret - 3))) * countFingers *0.25*1000)/1000; //per ogni dito in più moltiplichiamo .25
         } else {
-            return (distanceFrets + distanceStrings) * countFingers * 0.25;
+            return Math.round(Math.sqrt(Math.sqrt((distanceFrets + distanceStrings))) * countFingers * 0.25*1000)/1000;
         }
     }
 
@@ -218,17 +218,17 @@ export function useAppContext() {
         for (let i=0; i<4; i++) {
             if(fingerArray1[i] < 0 || fingerArray2[i] < 0){
                 if (fingerArray2[i] < 0 && fingerArray1[i] < 0) {
-                    interDistance = interDistance + Math.abs(fingerArray2[i] - fingerArray1[i])
+                    interDistance = Math.round((interDistance + Math.abs(fingerArray2[i] - fingerArray1[i]))*1000)/1000;
                 } else if (fingerArray1[i] < 0){ // se aggiungo 1 dito aggiungo 1
                     //interDistance = interDistance + Math.abs(fingerArray2[i])
-                    interDistance = interDistance + 1
+                    interDistance = (Math.round((interDistance + 1)*1000))/1000;
                 } /* se tolgo un dito non aggiungo nulla
                 else {
                     //interDistance = interDistance + Math.abs(fingerArray1[i])
                     interDistance = interDistance + 0
                 }*/
             } else {
-                interDistance = interDistance + Math.abs(fingerArray2[i] - fingerArray1[i])
+                interDistance = (Math.round((interDistance + Math.abs(fingerArray2[i] - fingerArray1[i]))*1000)/1000);
             }
 
         }
@@ -259,19 +259,22 @@ export function useAppContext() {
 
         return difficulty
     }
-
-    const globalD = (chordList, chord1, chord2, chord3, chord4) => { //equivale a inter in appunti
+    //DA SISTEMARE
+    const globalD = (chordList, chord1, chord2, chord3, chord4) => {
       let inter1 = interComplexity2chords (chordList, chord1, chord2)
+      let globalDif = Math.round((inter1 /2)*1000)/1000;
       if (chord3 != null) {
         var inter2 = interComplexity2chords(chordList, chord2, chord3)
+        globalDif = Math.round(((inter1 + inter2) /3)*1000)/1000;
       }
       if (chord4 != null) {
         var inter3 = interComplexity2chords(chordList, chord3, chord4)
+        globalDif = Math.round(((inter1 + inter2 + inter3) /4)*1000)/1000;
       }
       // console.log("Intra of ", chord1, "is", intra1);
       // console.log("Intra of ", chord2, "is", intra2);
       // console.log("cd of ", chord1, chord2, "is", inter);
-      let globalDif = (inter1 + inter2 + inter3)/3;
+      globalDif = Math.round(((inter1 + inter2 + inter3)/3)*1000)/1000;
 
       if(globalDif < 0) {
         globalDif = 0

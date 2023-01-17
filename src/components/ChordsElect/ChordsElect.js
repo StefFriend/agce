@@ -9,14 +9,37 @@ import app from "../../App";
 import {Instrument, Song, Track} from "reactronica";
 import {Fretboard, Tablature} from "../index";
 import GuitarChord from 'react-guitar-chords';
-
+/*import { Vex, Stave, StaveNote, Formatter } from "vexflow";
+import {VexTab, Artist } from 'vextab';*/
+//disinstallare vexflow e vextab
 
 const ChordsElect = (props) => {
     const appData = useContext(AppContext)
     const {chords, index} = props;
     const [chord, setChord] = useState('');
+    //React-Guitar
     //const acousticGuitar = withSoundFont('acoustic_guitar_steel');
     const {play, strum} = useSound({fretting: appData.sequenceChords.fretsArray[index], tuning: standard,});
+    /*const VF = vextab.Vex.Flow
+
+    const renderer = new VF.Renderer($('#boo')[0],
+      VF.Renderer.Backends.SVG);
+
+  // Initialize VexTab artist and parser.
+    const artist = new vextab.Artist(10, 10, 150, { scale: 0.8 });
+    const tab = new vextab.VexTab(artist);
+    const data = `
+
+    tabstave notation=true
+    notes (0/1.1/2.0/3.2/4.3/5) |
+  
+    `
+    try {
+      tab.parse(data);
+      artist.render(renderer);
+    } catch (e) {
+      console.error(e);
+    }*/
 
     const handleChange = (event) => {
         appData.functions.defineSelectedChords(event.target.value, index);
@@ -63,6 +86,9 @@ const ChordsElect = (props) => {
                     frets={appData.functions.inverseFretArray(appData.sequenceChords.fretsArray[index])}
                     music={false}
                   />
+                    {/*<div className={styles.vexbox}>
+                      <div id="boo"></div>
+                    </div>*/}
                   </div>
                 </FormControl>
 

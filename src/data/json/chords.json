@@ -3,28 +3,20 @@
     "name": "C",
     "pattern": [
       {
-        
         "fret": 0,
-        "finger": -1,
-        "note": "E3"
+        "finger": -1
       },
       {
-        
         "fret": 1,
-        "finger": 0,
-        "note": "C3"
+        "finger": 0
       },
       {
-        
         "fret": 0,
-        "finger": -1,
-        "note": "G3"
+        "finger": -1
       },
       {
-        
-        "fret": 2,
-        "finger": 1,
-        "note": "E3"
+         "fret": 2,
+        "finger": 1
       },
       {
         
