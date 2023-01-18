@@ -71,13 +71,13 @@ If String = -1 no finger used
 Intra Complexity calculation:
 
 
-$
+$$
 \frac{fingerCount}{4}  ∗ \left(B(x) +  \sqrt{(MaxFret – MinFret)^{2} + (MaxString – MinString)^{2}}\right)
-$
+$$
 
-$
+$$
 B(x)=\left{{x-3, \rm~for x>3\atop~0, \rm~otherwise}\right
-$
+$$
 
 x = MaxFret, to give a weight to chords not in first position, bar chord, barrè
 
