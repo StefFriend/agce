@@ -76,7 +76,7 @@ $$
 $$
 
 $$
-B(x)=\left{{x-3, \rm~for x>3\atop~0, \rm~otherwise}\right
+B(x) = \begin{cases} x-3, & \mbox{for } x\mbox{ >3} \\ 0, & \mbox{otherwis}\end{cases}
 $$
 
 x = MaxFret, to give a weight to chords not in first position, bar chord, barrè
