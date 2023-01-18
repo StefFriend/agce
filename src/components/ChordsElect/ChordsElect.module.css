@@ -4,6 +4,9 @@
     align-content: flex-start;
     alignment: center;
     max-width: fit-content;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    box-shadow: 1px 1px 1px black;
     /*margin: 100!important;
     width: 100!important;*/
 }
@@ -22,7 +25,7 @@
 
 }
 
-.button39 {
+.button {
     background-color: #FFFFFF;
     border: 1px solid rgb(209,213,219);
     border-radius: .5rem;
@@ -43,23 +46,15 @@
     touch-action: manipulation;
 }
 
-.button39:hover {
+.button:hover {
     background-color: rgb(249,250,251);
 }
 
-.button39:focus {
+.button:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
 }
 
-.button39:focus-visible {
+.button:focus-visible {
     box-shadow: none;
-}
-
-.vexbox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
 }

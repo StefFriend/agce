@@ -215,8 +215,15 @@ export function useAppContext() {
         }
     }
 
+  /**
+   * cd
+   * @param chordList
+   * @param chord1
+   * @param chord2
+   * @returns {number}
+   */
 
-    const interComplexity2chords = (chordList, chord1, chord2) => { //equivale a cd in appunti
+    const interComplexity2chords = (chordList, chord1, chord2) => { //equivale a cd in formula
         const fingerArray1 = createFingerArray(chordList, chord1);
         const fingerArray2 = createFingerArray(chordList, chord2);
 
@@ -225,32 +232,32 @@ export function useAppContext() {
         for (let i=0; i<4; i++) {
             if(fingerArray1[i] < 0 || fingerArray2[i] < 0){
                 if (fingerArray2[i] < 0 && fingerArray1[i] < 0) {
-                    interDistance = Math.round((interDistance + Math.abs(fingerArray2[i] - fingerArray1[i]))*1000)/1000;
+                    interDistance = (Math.round((interDistance + Math.abs(fingerArray2[i] - fingerArray1[i]))*1000)/1000);
                 } else if (fingerArray1[i] < 0){ // se aggiungo 1 dito aggiungo 1
                     //interDistance = interDistance + Math.abs(fingerArray2[i])
-                    interDistance = Math.round((interDistance + 1)*1000)/1000;
+                    interDistance = (Math.round((interDistance + 1)*1000)/1000);
                 } /* se tolgo un dito non aggiungo nulla
                 else {
                     //interDistance = interDistance + Math.abs(fingerArray1[i])
                     interDistance = interDistance + 0
                 }*/
             } else {
-                interDistance = Math.round((interDistance + Math.abs(fingerArray2[i] - fingerArray1[i]))*1000)/1000;
+                interDistance = (Math.round((interDistance + Math.abs(fingerArray2[i] - fingerArray1[i]))*1000)/1000);
             }
 
         }
         return interDistance;
     }
 
-    //TODO - DA CAMBIARE PERCHÉ SBAGLIATA -- COMPLESSITÀ TOTALE TRA TUTTI E 4
+
     /**
-     * Complessità
+     * interComplexity
      * @param chordList
      * @param chord1
      * @param chord2
-     * @returns {number}
+     * @returns {difficulty}
      */
-    const globalComplexity = (chordList, chord1, chord2) => { //equivale a inter in appunti
+    const interComplexity = (chordList, chord1, chord2) => { //equivale a inter in appunti
         let intra1 = intraComplexity(chordList, chord1);
         let intra2 = intraComplexity(chordList, chord2);
         let inter = interComplexity2chords (chordList, chord1, chord2)
@@ -258,7 +265,7 @@ export function useAppContext() {
        // console.log("Intra of ", chord1, "is", intra1);
        // console.log("Intra of ", chord2, "is", intra2);
        // console.log("cd of ", chord1, chord2, "is", inter);
-        let difficulty = intra2 - intra1 + inter;
+        let difficulty = Math.round((intra2 - intra1 + inter)*1000)/1000;
 
         if(difficulty < 0) {
             difficulty = 0
@@ -266,7 +273,15 @@ export function useAppContext() {
 
         return difficulty
     }
-    //DA SISTEMARE
+  /**
+   * GlobalComplexity
+   * @param chordList
+   * @param chord1
+   * @param chord2
+   * @param chord3
+   * @param chord4
+   * @returns {globali}
+   */
     const globalD = (chordList, chord1, chord2, chord3, chord4) => {
       let inter1 = interComplexity2chords (chordList, chord1, chord2)
       let globalDif = Math.round((inter1 /2)*1000)/1000;
@@ -302,7 +317,7 @@ export function useAppContext() {
                 intraComplexity: intraComplexity, // calculate intra complexity
                 createFingerArray: createFingerArray, // define array of used finger
                 interComplexity2chords: interComplexity2chords, // calculate inter complexity of 2 chords
-                globalComplexity: globalComplexity, // calculate global complexity from chord 1 to chord 2
+                interComplexity: interComplexity, // calculate global complexity from chord 1 to chord 2
                 defineSelectedChords: defineSelectedChords,
                 createStepsArray: createStepsArray,
                 createStepChord: createStepChord,

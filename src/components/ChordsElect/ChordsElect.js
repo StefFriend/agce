@@ -55,7 +55,7 @@ const ChordsElect = (props) => {
                           onPlay={play}
                           frets={{ from: 0, amount: 12,}}
                   />
-                    <button class={styles.button39} role="button" onClick={() => strum()} title="Strum">
+                    <button class={styles.button} role="button" onClick={() => strum()} title="Strum">
                       Strum
                     </button>
 
