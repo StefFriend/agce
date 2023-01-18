@@ -1072,6 +1072,111 @@
     ]
   },
   {
+    "name": "Badd4",
+    "pattern": [
+      {
+
+        "fret": 0,
+        "finger": -1
+      },
+      {
+
+        "fret": 0,
+        "finger": -1
+      },
+      {
+
+        "fret": 8,
+        "finger": 1
+      },
+      {
+
+        "fret": 9,
+        "finger": 2
+      },
+      {
+
+        "fret": -1,
+        "finger": -1
+      },
+      {
+
+        "fret": 7,
+        "finger": 0
+      }
+    ]
+  },
+  {
+    "name": "Esus/B",
+    "pattern": [
+      {
+
+        "fret": 0,
+        "finger": -1
+      },
+      {
+
+        "fret": 0,
+        "finger": -1
+      },
+      {
+
+        "fret": 9,
+        "finger": 3
+      },
+      {
+
+        "fret": 9,
+        "finger": 2
+      },
+      {
+
+        "fret": -1,
+        "finger": -1
+      },
+      {
+
+        "fret": 7,
+        "finger": 0
+      }
+    ]
+  },
+  {
+    "name": "F#11",
+    "pattern": [
+      {
+
+        "fret": 0,
+        "finger": -1
+      },
+      {
+
+        "fret": 0,
+        "finger": -1
+      },
+      {
+
+        "fret": 3,
+        "finger": 1
+      },
+      {
+
+        "fret": 4,
+        "finger": 3
+      },
+      {
+
+        "fret": 4,
+        "finger": 2
+      },
+      {
+
+        "fret": 2,
+        "finger": 1
+      }
+    ]
+  },
+  {
     "name": "G#",
     "pattern": [
       {
