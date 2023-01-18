@@ -94,7 +94,7 @@ $$
 
 where cd =
 $$
-cd = \sum_{d= 0}^{d = 3} |C1_d - C2_d| + k
+\sum_{d= 0}^{d = 3} |C1_d - C2_d| + k
 $$
 
 C1 and C2 are chords FingerArray (the next two in chord progression)
