@@ -75,7 +75,8 @@ $$
 \frac{fingerCount}{4}  ∗ \left(B(x) +  \sqrt{(MaxFret – MinFret)^{2} + (MaxString – MinString)^{2}}\right)
 $$
 
-B(x) = 
+where B(x) =
+
 $$
 \left\{ \begin{array}{cl}
 x-3, &  \ for \ x>3 \\\
