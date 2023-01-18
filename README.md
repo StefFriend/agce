@@ -77,7 +77,7 @@ $$
 
 $$
 |B(x))| = \left\{ \begin{array}{cl}
-x & : \ x \geq 0 \\
+x & : \ x \geq 0 \\\
 -x & : \ x < 0
 \end{array} \right.
 $$
