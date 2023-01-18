@@ -83,9 +83,9 @@ x = MaxFret, to give a weight to chords not in first position, bar chord, barrè
 
 Inter Complexity calculation:
 
-$
+$$
 IntraComplexity_2-IntraComplexity_1 + cd
-$
+$$
 
 where
 
