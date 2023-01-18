@@ -184,12 +184,11 @@ export function useAppContext() {
 
 
     /**
-     * Funzione per calcolare la complessità intrinseca dell'accordo
-     * distanza tasti + distanza corda
-     * N.B. tiene conto anche della pressione del dito quando fa un barrè su un tasto > 3
-     * @returns {number}
+     * Function to calculate intraComplexity of single chord
+     * N.B. calculate also finger stress for MaxFret > 3
      * @param chordList
      * @param chordName
+     @returns {number}
      */
     const intraComplexity = (chordList, chordName) => {
         let pattern = chordList.filter(x => x.name === chordName);
@@ -216,7 +215,7 @@ export function useAppContext() {
     }
 
   /**
-   * cd
+   * cd - see slides
    * @param chordList
    * @param chord1
    * @param chord2
@@ -251,7 +250,7 @@ export function useAppContext() {
 
 
     /**
-     * interComplexity
+     * interComplexity between two consecutive chords
      * @param chordList
      * @param chord1
      * @param chord2
@@ -274,13 +273,13 @@ export function useAppContext() {
         return difficulty
     }
   /**
-   * GlobalComplexity
+   * GlobalComplexity as a mean between all 4 chords
    * @param chordList
    * @param chord1
    * @param chord2
    * @param chord3
    * @param chord4
-   * @returns {globali}
+   * @returns {number}
    */
     const globalD = (chordList, chord1, chord2, chord3, chord4) => {
       let inter1 = interComplexity2chords (chordList, chord1, chord2)
