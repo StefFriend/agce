@@ -4,7 +4,7 @@ import produce from "immer";
 
 /* FROM JSON*/
 import chordList from '../data/json/chords.json';
-import noteDict from '../data/json/noteDict.json'; //TODO: DA CAMBIARE GLI ELEMENTI NEL FILE
+import noteDict from '../data/json/noteDict.json';
 
 export const AppContext = React.createContext({});
 
@@ -20,10 +20,10 @@ export function useAppContext() {
     const [fretsArray, setFretsArray] = useState([[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0]])
 
     /**
-     * @param chordList Elenco degli accordi
-     * @param chordName Accordo selezionato
-     * @param step Step array per Reactronica
-     * @param index indice dell'accordo selezionato dall' utente
+     * @param chordList
+     * @param chordName selected chord
+     * @param step Step array
+     * @param index index selected chord
      */
 
     const createStepsArray = (chordList, chordName, index) => {
@@ -90,7 +90,7 @@ export function useAppContext() {
      * Function to save only fingered strings
      * @param pattern - is the array of the chords.json
      * i - is the string index (from 0 to 5)
-     * @returns {*[]}
+     * @returns {}[string]
      *
      */
     const stringArray = (pattern) => {
