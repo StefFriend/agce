@@ -92,7 +92,14 @@ $$
 IntraComplexity_2-IntraComplexity_1 + cd
 $$
 
-where
+where cd =
+$$
+cd = \sum_{d= 0}^{d = 3} |C1_d - C2_d| + k
+$$
+
+C1 and C2 are chords FingerArray (the next two in chord progression)
+d is the nth  element of FingerArray
+k = 1 if numberOfFinger(C1) < numberOfFinger(C2) else k = 0
 
 ## Installation
 
