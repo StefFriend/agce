@@ -93,6 +93,7 @@ IntraComplexity_2-IntraComplexity_1 + cd
 $$
 
 where cd =
+
 $$
 \sum_{d= 0}^{d = 3} |C1_d - C2_d| + k
 $$
