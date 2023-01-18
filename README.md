@@ -68,7 +68,7 @@ If String = -1 no finger used
 
 ### Math under the hood
 
-Intra Complexity calculation:
+* Intra Complexity calculation:
 
 
 $$
@@ -86,7 +86,7 @@ $$
 
 x = MaxFret, to give a weight to chords not in first position, bar chord, barrè
 
-Inter Complexity calculation:
+* Inter Complexity calculation:
 
 $$
 IntraComplexity_2-IntraComplexity_1 + cd
@@ -101,6 +101,16 @@ $$
 C1 and C2 are chords FingerArray (the next two in chord progression)
 d is the nth  element of FingerArray
 k = 1 if numberOfFinger(C1) < numberOfFinger(C2) else k = 0
+
+* Global Complexity calculation:
+
+Mean of 'InterComplexities'
+
+## Usage
+
+Just simply select 4 chords from select to view calculated complexities, fretboard representation, tablature and chord chart.
+
+Click on the 'strum' button to let chord plays.
 
 ## Installation
 
