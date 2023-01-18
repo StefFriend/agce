@@ -75,10 +75,11 @@ $$
 \frac{fingerCount}{4}  ∗ \left(B(x) +  \sqrt{(MaxFret – MinFret)^{2} + (MaxString – MinString)^{2}}\right)
 $$
 
+B(x) = 
 $$
-|B(x))| = \left\{ \begin{array}{cl}
-x & : \ x \geq 0 \\\
--x & : \ x < 0
+\left\{ \begin{array}{cl}
+x-3, &  \ for \ x>3 \\\
+0 &  \ else
 \end{array} \right.
 $$
 
