@@ -48,7 +48,7 @@ Two main arrays are used:
 
 Every n element of the chord represent a string (0-5) and is filled with double values (fret,finger). Finger in range 0-3 (4 fingers).
 
-Fret = 0 means open playable string (ope string).
+Fret = 0 means open playable string (open string).
 
 Fret = -1 the strings is not playable
 
