@@ -21,7 +21,7 @@ Video demo: [Link](http://agce.webguitar.it/)
 
 Presentation slides: [Link](https://polimi365-my.sharepoint.com/:b:/g/personal/10937333_polimi_it/EY6k-uO-ofJFuatJmPxsal4Bk2uYBbNSMNvc3hNlvxvzGw?e=u3mvpf)
 
-AGCE is my final project of ACTAM and CMRM courses at MAE - Polimi  [Link](https://suono.polimi.it/)
+AGCE is my final project of ACTAM and CMRM courses 2022/2023 at MAE - Polimi  [Link](https://suono.polimi.it/)
 
 *This version is avaiable only for desktop devices*
 -
@@ -38,7 +38,7 @@ where elements order is from string 1 to 6 (0-5) and -1 indicates no playable st
 
 ### The arrays structure
 
-Two main arrays are user:
+Two main arrays are used:
 * FretArray (example of 2 chords)
 
 | ChordName | 1    | 2   | 3    | 4   | 5    | 6     |
