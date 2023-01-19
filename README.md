@@ -19,7 +19,7 @@ Demo: [Link](http://agce.webguitar.it/)
 
 Video demo: [Link](http://agce.webguitar.it/)
 
-Presentation slides: [Link](https://polimi365-my.sharepoint.com/:b:/g/personal/10937333_polimi_it/EY6k-uO-ofJFuatJmPxsal4Bk2uYBbNSMNvc3hNlvxvzGw?e=u3mvpf)
+Presentation slides: [Link](https://polimi365-my.sharepoint.com/:b:/g/personal/10937333_polimi_it/ETLWdYT4Q9NBu656MM6PoiABtrk8daPO0uDkQV1-YlRR3Q?e=YA67mi)
 
 AGCE is my final project of ACTAM and CMRM courses 2022/2023 at MAE - Polimi  [Link](https://suono.polimi.it/)
 
