@@ -17,7 +17,7 @@ Three types of chord complexities are calculated:
 
 Demo: [Link](http://agce.webguitar.it/)
 
-Video demo: [Link](http://agce.webguitar.it/)
+Video demo: [Link](https://www.youtube.com/watch?v=Wg9JyVlHnxs)
 
 Presentation slides: [Link](https://polimi365-my.sharepoint.com/:b:/g/personal/10937333_polimi_it/ETLWdYT4Q9NBu656MM6PoiABtrk8daPO0uDkQV1-YlRR3Q?e=YA67mi)
 
